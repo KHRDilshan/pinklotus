@@ -3,6 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.font-playfair {
+  font-family: var(--font-playfair);
+}
 :root {
   --background: oklch(0.98 0.001 0);
   --foreground: oklch(0.1 0 0);
@@ -122,4 +125,19 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 2s ease-out forwards;
 }

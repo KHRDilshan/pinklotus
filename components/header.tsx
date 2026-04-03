@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
 
@@ -8,17 +9,18 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-40 bg-white/95 backdrop-blur-sm border-b border-black/5">
+    <header className="fixed top-0 w-full z-40 bg-white backdrop-blur-sm border-b border-black/5">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex flex-col">
-          <span className="text-xl font-light tracking-widest text-primary">
-            PINK LOTUS
-          </span>
-          <span className="text-xs tracking-widest text-primary/60">
-            LUXURY HOTEL
-          </span>
-        </Link>
+    <Link href="/" className="flex items-center">
+      <Image
+        src="/logo.png" // replace with your logo path
+        alt="Pink Lotus Luxury Hotel"
+        width={70} // adjust width as needed
+        height={50} // adjust height as needed
+        className="object-contain"
+      />
+    </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-12">
@@ -50,7 +52,7 @@ export function Header() {
 
         {/* Book Button */}
         <div className="hidden md:block">
-          <button className="px-8 py-3 bg-accent text-white text-xs font-medium tracking-widest hover:bg-accent/90 transition-colors rounded-sm">
+          <button className="px-8 py-3 bg-[#dd1155] text-white text-xs font-medium tracking-widest hover:bg-accent/90 transition-colors rounded-sm">
             BOOK NOW
           </button>
         </div>

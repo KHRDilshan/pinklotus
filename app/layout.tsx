@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-
+import { Playfair_Display } from 'next/font/google';
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
@@ -28,7 +28,11 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
 }
-
+const playfair = Playfair_Display({
+  weight: ['400', '700'], // light and bold
+  subsets: ['latin'],
+  variable: '--font-playfair',
+});
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,7 +40,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">
+      <body 
+              className={`font-sans  ${playfair.variable} antialiased`}
+
+      >
         {children}
         <Analytics />
       </body>
