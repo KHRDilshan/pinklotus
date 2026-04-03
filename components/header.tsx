@@ -14,7 +14,7 @@ export function Header() {
         {/* Logo */}
     <Link href="/" className="flex items-center">
       <Image
-        src="/logo.png" // replace with your logo path
+        src="/Logo.png" // replace with your logo path
         alt="Pink Lotus Luxury Hotel"
         width={70} // adjust width as needed
         height={50} // adjust height as needed
